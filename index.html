@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <title>Application météo</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.4.3/css/ol.css" type="text/css">
+    <link rel="stylesheet" href="style.css">
+
+    <script src="https://code.jquery.com/jquery-1.12.4.js" defer></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.4.3/build/ol.js" defer></script>
+    <script src="weather.js" defer></script>
+</head>
+<body>
+    <nav class="navbar navbar-dark bg-dark">
+        <span class="navbar-brand mb-0 h1">App météo - Lilian Gallon</span>
+    </nav>
+
+    <div id="map"></div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 mx-auto">
+                <div id="menu" class="input-group mb-3">
+                    <input class="form-control autocomplete" placeholder="Nom de ville ou code postal" type="text" autocomplete="off">
+                    <div class="input-group-append">
+                      <button class="btn btn-outline-secondary" type="button" id="search">
+                        <span id="spinner" class="spinner-border spinner-border-sm" role="status" aria-hidden="true" hidden></span>
+                        Afficher
+                      </button>
+                    </div>
+                </div>
+
+                <div class="weather">
+                    <div id="current_condition">
+                        Vous pouvez:
+                        <ul>
+                            <li>Rechercher une ville par son nom <b>avec autocompletion</b></li>
+                            <li>Rechercher une ville par son code postal <b>avec autocompletion</b></li>
+                            <li>Obtenir la météo en cliquant sur la carte</li>
+                        </ul>
+                        La carte sera mise à jour automatiquement en fonction de la ville ou du point selectionné.
+                        API utilisées:
+                        <ul>
+                            <li>Map: OpenLayers 6.4.3</li>
+                            <li>Recherche de ville en fonction du nom ou code postal: https://geo.api.gouv.fr/</li>
+                            <li>Prévisions méteo: https://www.prevision-meteo.ch/services</li>
+                        </ul>
+                        Aucune clé d'API n'a été utilisée.
+                    </div>
+
+                    <div id="forecast">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
