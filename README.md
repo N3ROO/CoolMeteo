@@ -1,7 +1,7 @@
 # CoolMeteo
 Parce que météo France c'est nul
 
-[screenshot](screenshot.png)
+![screenshot](screenshot.png)
 
 Vous pouvez:
 - Rechercher une ville par son nom avec autocompletion
